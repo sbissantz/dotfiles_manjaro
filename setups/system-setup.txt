@@ -1,0 +1,451 @@
+#
+#
+# Manjaro System Setup
+#
+#
+
+Idea: An Arch based system for noobs with a minimum extra security -- I am
+actually to lazy to fully maintain a system.
+
+#
+# Installation
+#
+
+ netinst ISO 
+--------------
+> UEFI install
+> i3 minimal
+
+#
+# Partitioning scheme
+#
+
+ Partiotioning
+---------------
+> / (50GB) -- ext4 
+> /boot (512MB) -- fat32
+> /home (REST) --ext4
+> /swap (64GB) --swap
+
+#
+# User privileges
+#
+
+> viusdo (root shell)
+	
+	username ALL=(ALL) ALL
+
+# 
+# CPU Microcode 
+# 
+
+ intel-microcode (Note needs non-free sources)
+-------------------------------------
+
+> cat /proc/cpuinfo 
+
+ Hardware & system info 
+------------------------
+
+> uname -v
+> (sudo lshw)
+
+#
+# I3wm
+#
+
+> i3 xorg suckless-tools
+
+#
+# Xinit (console login)
+#
+
+> echo ‘exec i3’ > ~/.xsession
+
+# manually
+startx
+
+# startx automatically after login 
+> .bash_profile
+
+	if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  		exec startx
+	fi
+
+#
+# WIFI
+#
+
+ NetworkManager
+----------------
+> nmtui
+
+ Manually (I)
+-------------
+
+# Find WIFI CARD (name)
+> ip addr 
+
+# Driver status 
+> lspci -k
+
+# Make sure it is up (w*=wireless e*=ethernet)
+> sudo ifconfig wlp4s0 up
+
+# Scan for list of WIFI networks
+> sudo iwlist wlp4s0 scan
+
+> Edit: /etc/network/interfaces
+
+	auto wlp4s0
+	iface wlp4s0 inet dhcp 
+                wpa-ssid {ssid}
+                wpa-psk  {password}
+
+ Manually (I)
+-------------
+
+# Find *
+> sudo ifconfig
+> sudo ifconfig wlp4s0 up
+> sudo iwlist wlp4s0 scan
+
+#  Set it up with desired stuff
+> sudo iwconfig wlp4s0 essid Fritzbox s:ABCDE12345
+
+# Obtain IP address: request it with the Dynamic Host Client
+> sudo dhclient wlp4s0
+
+ (> Disable wifi)
+------------------
+> sudo ifconfig wlp4s0 down 
+
+#
+# Terminal emulator
+#
+
+ rxvt-unicode-256color  
+-----------------------
+# Note: install package & log out 
+# Note: to make it less ugly you need to set up .Xresources
+xrdb ~/.Xresources
+
+# Run as daemon
+# Prefered method: ~/.xinitrc
+# See: https://man.archlinux.org/man/urxvtd.1
+#
+
+urxvtd -q -f -o
+
+#
+# Power Management 
+# Reference: https://wiki.manjaro.org/index.php/Power_Management
+#
+
+# Note: use TLP as base, tune with PowerTop and leave Temperature/therma Management to ThermalD
+
+
+ TLP (tlp tlp-rdw acpi-call-dkms)
+----------------------------------
+# Reference: hts://linrunner.de/tlp/
+# Note: See TLP thinkpad advice @debian
+# Think pad advice (> X220, 420) : acpi_call-dkms
+# Note: already optimized for battery life &l implement Powertop’s
+# recommendations out of the box
+
+> sudo tlp start
+> sudo tlp status
+> sudo tlp-rdw enble
+> sudo bluethooth off
+
+> EDIT: /etc/tlp.conf (root)
+> sudo tlp start
+
+# Make things permanent on reboot
+# Note: not necessary to create own init.d script | modify /etc/rc.local - just: 
+sudo apt-get install sysfsutils
+
+ PowerTOP (powertop)
+---------------------
+# Note: can be combined with TLP
+# Reference https://codeablereason.wordpress.com/2017/03/21/power-management-and-tuning-a-thinkpad-x230t/
+# PowerTop a diagnostic tool used to identify and report issues with power
+# consumption and management. It can be used as a reporting tool, an automated
+# power management tool or both.
+
+# Report 
+> sudo powertop --html
+
+# Systemd 
+
+> sudo sh -c "echo -e '[Unit]\nDescription=PowerTop\n\n[Service]\nType=oneshot\nRemainAfterExit=true\nExecStart=/usr/bin/powertop --auto-tune\n\n[Install]\nWantedBy=multi-user.target\n' > /etc/systemd/system/powertop.service"
+sudo systemctl enable --now powertop.service
+
+ ThermalD (thermald)
+--------------------
+# Linux Thermal Daemon can be used to automatically handle CPU frequency
+# scaling according to system load.
+
+> sudo systemctl enable --now thermald
+
+#
+# Bluethooth
+#
+
+> systemctl disable bluetooth.sevice
+> systemctl stop bluetooth.sevice
+
+#
+# Filmanager
+#
+
+ ranger
+--------
+
+ pcmanfm
+---------
+
+#
+# Printing
+#
+
+ cups
+------
+
+#
+# System Monitor
+#
+
+htop
+----
+
+# Show all system processes
+> htop -u
+
+#
+# Keys (TODO)
+#
+
+xbindkeys
+
+#
+# Sound
+#
+
+ Alsamixer 
+-----------
+
+# Find list of hardware devices
+# Reference: https://wiki.debianforum.de/Audiokonfiguration
+> aplay -l
+
+> Edit: .i3/config
+
+	bindsym XF86AudioRaiseVolume exec "amixer set Master -q 5%+"
+	bindsym XF86AudioLowerVolume exec "amixer set Master -q 5%-"
+	bindsym XF86AudioMute exec "amixer set Master toggle"
+
+# Microphone test
+> arecord --duration=5 --format=dat test-mic.wav
+> aplay test-mic.wav
+> rm test-mic.wav
+
+#
+# Monitor 
+#
+
+ xbacklight
+------------
+
+> xbacklight -inc 5
+
+# Error: No outputs have backlight property
+> Edit/create: /usr/share/X11/xorg.conf.d/10-backlight.conf
+
+	Section "Device"
+		Identifier "Intel"
+		Driver "intel"
+	EndSection
+> reboot
+
+> Modify: /i3/config
+
+ xrandr
+--------
+
+# Show connected monitor (eDP-1)
+> xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1
+
+xrandr --output eDP-1 --brightness 0.7
+
+
+    # Increase brightness
+    bindsym XF86MonBrightnessUp exec “xbacklight -inc 5”
+
+    # Decrease brightness
+    bindsym XF86MonBrighnessDown exec “xbacklight -dec 5”
+
+# 
+# Git
+#
+
+> git
+
+
+#
+# Bash
+#
+
+# Bash logout
+# To get rid of the ugly looking glyps when shutting down
+#
+
+> ~/.bash_logout
+
+	clear
+	reset
+
+# Oh my bash
+#
+
+> bash -c "$(wget https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh -O -)" 
+> EDIT: ~/.bashrc
+
+#
+# Mouse
+#
+
+ unclutter
+-----------
+
+# Hide mouse cursor
+# Note: Just install the package
+# -- if not ~/.xintrc
+
+	unclutter unclutter --timeout 2 --jitter 50 --ignore-scrolling &
+
+#
+# Background
+#
+
+ feh 
+-----
+# Note: go-to method to set background!
+# Reference: https://wiki.archlinux.org/index.php/Feh#As_a_desktop_wallpaper_manager
+
+> feh --bg-scale /path/to/image.file
+> cat .fehbg
+Note: To change the background image, edit the file ~/.fehbg
+
+> Edit: ~/.xinitrc
+
+	~/.fehbg &
+
+#
+# Latex (texlive full)
+#
+
+# Full Latex Installation (actually an overload)
+# References: https://tex.stackexchange.com/questions/245982/differences-between-texlive-packages-in-linux 
+# https://francopasut.github.io/operating%20systems/Texlive-Manjaro/
+
+> Edit: ~/.profile
+
+	export PATH="$PATH:/opt/texlive/2019/bin/x86_64-linux".
+
+> sudo ln -s /opt/texlive/2021/bin/x86_64-linux/latexmk
+> sudo ln -s /opt/texlive/2021/bin/x86_64-linux/bibtex
+
+# Delete language packages? 
+
+#
+# Hibernation
+# https://www.vegard.net/manjaro-enable-hibernate/
+#
+
+# Find UUID of swap partition
+> sudo blkid | grep -i "swap"
+> CHEK: /etc/default/grub (if they match, alright, if not add
+	GRUB_CMDLINE_LINUX_DEFAULT="[...] resume=UUID=PARTUUID="e87b4498-00ab-3245-8b17-b06765eb5065"
+# If you had to edit something
+> sudo grub-mkconfig -o /boot/grub/grub.cfg
+> pacman -Q mkinitcpio
+> Check: /etc/mkinitcpio.conf
+
+	HOOKS="base udev autodetect modconf block keyboard keymap resume filesystems fsck resume"
+
+# Note: 'systemd' entry in there? No need for 'resume'!
+> sudo mkinitcpio -P
+> reboot
+# Note: Test hibernation
+
+# i3 exit
+# 
+# Note: If you want to use "i3exit hibernate" asure it is installed
+
+#
+# Dotfiles (best solution seen so far)
+# https://wiki.archlinux.org/index.php/Dotfiles
+# https://news.ycombinator.com/item?id=11070797
+# https://wiki.archlinux.org/index.php/Git#Filtering_confidential_information
+#
+
+> git init --bare ~/.dotfiles
+
+# Store the alias in e.g. ~/.alias
+	alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+> config config status.showUntrackedFiles no
+
+# If you are using Bash and would like bash completion for this alias:
+> yay -S bash-complete-alias 
+> Edit ~/.bashrc. 
+
+	if [ -f /usr/share/bash-complete-alias/complete_alias ]; then
+        	. /usr/share/bash-complete-alias/complete_alias
+        	alias gitconf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+        	complete -F config _complete_alias
+	else
+        	echo "Steven, '/usr/shar/bash-complete-alias/complete_alias' is missing"
+	fi
+
+> source ~/.bashrc
+
+# Now you can track changes with
+> gitconf status
+> gitconf add .vimrc
+> gitconf commit -m "Add vimrc"
+> gitconf add .config/redshift.conf
+> gitconf commit -m "Add redshift config"
+> gitconfig push
+
+#
+# Omit to push sensible info
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

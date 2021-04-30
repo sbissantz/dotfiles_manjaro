@@ -1,0 +1,120 @@
+#
+# SSH-setup (gnome-keyring & git-integration)
+# https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+#
+ 
+# Check for existing pub-key (e.g. id_rsa.pub) 
+# > ls -al ~/.ssh
+ 
+# Never created a key?  Create one with Ed25519 algorithm
+# > ssh-keygen -t ed25519 -C "your_email@example.com"
+ 
+# Adding or changing passphrases?
+# https://docs.github.com/en/github/authenticating-to-github/working-with-ssh-key-passphrases
+                                         
+#
+# SSH-config
+#
+ 
+# Start the ssh-agent in the background
+# > eval "$(ssh-agent -s)"
+# Adding your SSH key to the ssh-agent
+ssh-add ~/.ssh/id_ed25519
+ 
+# SSH pub(!) key to github
+# https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+# cat ~/.ssh/ed_5519 # or: xclip -selection clipboard < ~/.ssh/id_ed25519.pub   
+# Copy to github.com > Settings > SSH & GPG Keys > ... paste (withount 'ssh=')   
+#                                        
+# Automate SSH acces with gnome-keyring
+# https://wiki.archlinux.org/index.php/GNOME/Keyring              
+#                                          
+# Console login
+# When using console-based login, the keyring daemon can be started by either
+# PAM or xinitrc. PAM can also unlock the keyring automatically at login. 
+#
+# PAM method
+# Start the gnome-keyring-daemon from /etc/pam.d/login:
+# Add auth optional pam_gnome_keyring.so at the end of the auth section and
+# session optional pam_gnome_keyring.so auto_start at the end of the session
+# section.
+#%PAM-1.0
+#  
+auth       required     pam_securetty.so
+auth       requisite    pam_nologin.so
+auth       include      system-local-login
+auth       optional     pam_gnome_keyring.so ###
+account    include      system-local-login
+session    include      system-local-login
+session    optional     pam_gnome_keyring.so auto_start
+ 
+# GDM: add password optional pam_gnome_keyring.so to the end of
+# /etc/pam.d/passwd
+#
+#%PAM-1.0
+# 
+#password       required        pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
+#password       required        pam_unix.so sha512 shadow use_authtok
+password        required        pam_unix.so sha512 shadow nullok
+password        optional        pam_gnome_keyring.os
+
+# Note 1: To use automatic unlocking, the same password for the user account and
+# the keyring have to be set.
+# Note 2: You will still need the code in ~/.xinitrc below in order to export
+# the environment variables required.
+#
+# Start the gnome-keyring-daemon from xinitrc: 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+#
+# Terminal applications
+# To enable the keyring for applications run through the terminal, such as SSH,
+# add the following to your ~/.bash_profile
+#
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
+# gnome-keyring-daemon with the ssh component will start an SSH agent and
+# automatically load all the keys matching ~/.ssh/id_* with corresponding .pub
+# files. There is no way to remove these keys from the agent.
+#
+# List all loaded keys:
+#
+ssh-add -L
+
+# To manually add an SSH key from another directory
+#
+ssh-add ~/.private/id_rsa
+# Enter passphrase for ~/.private/id_rsa:
+
+#To permanently save the a passphrase in the keyring, use ssh-askpass from
+#package seahorse: 
+#
+/usr/lib/seahorse/ssh-askpass my_key
+
+# Note: You have to have the corresponding .pub file in the same directory as
+# the private key (~/.ssh/id_rsa.pub in the example). Also, make sure that the
+# public key is the file name of the private key plus .pub (for example,
+# my_key.pub).
+
+# To disable all manually added keys:
+#
+ssh-add -D
+
+# To delete the disabled key remove it from ~/.ssh/
+#
+
+#
+# Git integration
+#
+# The GNOME keyring is useful in conjuction with Git when you are pushing over
+# HTTPS.
+pacman -Q libsecret
+git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+
+
+
+
+

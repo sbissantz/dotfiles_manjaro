@@ -1,0 +1,136 @@
+#
+# R Setup
+# https://pat-s.me/post/arch-install-guide-for-r/
+# http://dirk.eddelbuettel.com/blog/2017/11/27/#011_faster_package_installation_one
+#
+
+# https://pat-s.me/post/arch-install-guide-for-r/
+# TODO https://wiki.archlinux.org/index.php/R
+# TODO: https://rstats.wtf/r-startup.html
+# TODO: http://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/
+
+#
+# Package manager: enable parallel compiling (to speed up)
+# 
+
+# Edit /etc/makepkg.conf
+MAKEFLAGS="-j$(nproc)"
+
+#
+# System libraries
+#
+
+yay -S udunits jdk-openjdk openjdk-src texlive-full pandoc pandoc-citeproc pandoc-crossref
+
+# udunits: supports units of physical quantities. Its C library provides for
+# arithmetic manipulation of units and for conversion of numeric values between
+# compatible units.
+# jdk-openjdk & openjdk-src: offical free implementation of the Java Platform 
+# texlive-full: typesetting 
+# pandoc & pandoc-citeproc & pandoc-crossref: convert files from one markup
+# format into another,
+
+#
+# pre-R 
+#
+
+pacman -S ccache
+
+# Edit: ~/.R/Makevars (create it if missing) 
+# -- see: direk.eddelbuettel (above)
+VER=
+CCACHE=ccache
+CC=$(CCACHE) gcc$(VER)
+CXX=$(CCACHE) g++$(VER)
+C11=$(CCACHE) g++$(VER)
+C14=$(CCACHE) g++$(VER)
+FC=$(CCACHE) gfortran$(VER)
+F77=$(CCACHE) gfortran$(VER)
+
+#
+# Openblas/LAPACK (libopenblas)
+# Note: I installed openblas before R & R-devel since blas and lapack seem to
+# conflict with openblas-lapack
+#
+
+yay -S openblas-lapack
+
+#
+# R
+#
+
+sudo pacman -S r
+sudo yay -S r-devel
+
+#
+# Additionals
+#
+yay -S gcc-fortran v8-r tcl tk nlopt gsl
+
+# gcc-fortran: GNU Fortran compiler, part of GCC
+# v8-r: R interface to Google's open source JavaScript engine.
+# tcl & tk: launch the mirror selection popup if you use  R from the shell
+# without a prior defined mirror, you need
+# nlopt: Common Lisp interface to NLopt. NLopt is a free/open-source library for
+# nonlinear optimization, providing a common interface for a number of different
+# free optimization routines available online as well as original implementations
+# of various other algorithms. 
+# gsl: The GNU Scientific Library (GSL) is a modern numerical library for C and
+# C++ # programmers
+
+# Note: v8-r requires age to build (~2h). Plan your updates wisely
+
+#
+# radian 
+#
+
+yay -S radian
+
+#
+# Rstudio
+#
+
+yay -S rstudio-desktop
+
+#
+# Rpackages
+#
+
+# Install first (recommended)
+install.packages("git2r")
+
+pkgs <- c("gert", "devtools", "usethis")
+lapply(pkgs, install.packages, character.only=TRUE,)
+
+
+# Rstan (TODO) -- read more on this if you use it more frequently
+# https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
+install.packages("rstan")
+
+#
+# SSH (with R) 
+# Note: Is already set up -- /setups/ssh-setup
+#
+
+# Manually
+
+# Pass cred to the credentials argument in create_from_github()
+cred <- git2r::cred_ssh_key(publickey = "~/.ssh/id_xxxxx.pub", privatekey = "~/.ssh/id_xxxxxx")
+
+# Now clone all your repos from Github, e.g.:
+create_from_github(repo = "pat-s/oddsratio", destdir = "~/git", credentials = cred). 
+
+# Check if git2r:: returns the correct credentials. Should it_xxxxx.pub
+check_ssh_key()
+
+# Automatically
+create_from_github(repo = "pat-s/oddsratio", destdir = "~/git", credentials = git2r::cred_ssh_key())
+
+#
+# Rprofile (READ ON above)
+#
+
+
+
+
+
