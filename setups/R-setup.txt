@@ -38,14 +38,14 @@ pacman -S ccache
 
 # Edit: ~/.R/Makevars (create it if missing) 
 # -- see: direk.eddelbuettel (above)
-VER=
-CCACHE=ccache
-CC=$(CCACHE) gcc$(VER)
-CXX=$(CCACHE) g++$(VER)
-C11=$(CCACHE) g++$(VER)
-C14=$(CCACHE) g++$(VER)
-FC=$(CCACHE) gfortran$(VER)
-F77=$(CCACHE) gfortran$(VER)
+	VER=
+	CCACHE=ccache
+	CC=$(CCACHE) gcc$(VER)
+	CXX=$(CCACHE) g++$(VER)
+	C11=$(CCACHE) g++$(VER)
+	C14=$(CCACHE) g++$(VER)
+	FC=$(CCACHE) gfortran$(VER)
+	F77=$(CCACHE) gfortran$(VER)
 
 #
 # Openblas/LAPACK (libopenblas)
@@ -81,33 +81,6 @@ yay -S gcc-fortran v8-r tcl tk nlopt gsl
 # Note: v8-r requires age to build (~2h). Plan your updates wisely
 
 #
-# radian 
-#
-
-yay -S radian
-
-#
-# Rstudio
-#
-
-yay -S rstudio-desktop
-
-#
-# Rpackages
-#
-
-# Install first (recommended)
-install.packages("git2r")
-
-pkgs <- c("gert", "devtools", "usethis")
-lapply(pkgs, install.packages, character.only=TRUE,)
-
-
-# Rstan (TODO) -- read more on this if you use it more frequently
-# https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
-install.packages("rstan")
-
-#
 # SSH (with R) 
 # Note: Is already set up -- /setups/ssh-setup
 #
@@ -127,9 +100,71 @@ check_ssh_key()
 create_from_github(repo = "pat-s/oddsratio", destdir = "~/git", credentials = git2r::cred_ssh_key())
 
 #
-# Rprofile (READ ON above)
+# Rstartup
+# https://rstats.wtf/r-startup.html
+#
+ 
+# 1. .Renviron - which contains environment variables to be set in R sessions.
+# 2. .Rprofile - which contains R code to be run in each session.
+
+#
+# .Renviron
+
+> Create 
+
+> Edit: ~/.Renviron or usethis::edit_r_environ()
+
+# Host different R versions
+# https://community.rstudio.com/t/help-regarding-package-installation-renviron-rprofile-r-libs-r-libs-site-and-r-libs-user-oh-my/13888
+# Trick: Use specifiers "%v" and "%p"
 #
 
+# Use specifiers "%v" and "%p"
+# Default: R_LIBS_USER=~/R/%p-library/%v
+# %p: expands to the architecture
+# %v: expands to the minor R version
+# i.e.: R/x86_64-library/4.0
+
+	R_LIBS_USER = ${HOME}/Rlibs/%v
+
+#
+# .Rprofile (READ ON above)
+# http://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/
+#
+
+#
+# radian 
+#
+
+yay -S radian
+
+#
+# Rstudio
+#
+
+yay -S rstudio-desktop
+
+#
+# Rstudio (with R devel)
+#
+
+https://support.rstudio.com/hc/en-us/articles/200486138-Changing-R-versions-for-RStudio-desktop
+
+#
+# Rpackages
+#
+
+# Install first (recommended)
+install.packages("git2r")
+
+pkgs <- c("gert", "devtools", "usethis")
+lapply(pkgs, install.packages, character.only=TRUE,)
+
+# Rstan (TODO) -- read more on this if you use it more frequently
+# https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
+install.packages("rstan")
+
+https://kbroman.org/pkg_primer/pages/build.html
 
 
 

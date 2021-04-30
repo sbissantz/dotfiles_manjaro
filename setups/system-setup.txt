@@ -419,33 +419,25 @@ Note: To change the background image, edit the file ~/.fehbg
 > gitconf commit -m "Add redshift config"
 > gitconfig push
 
+# Replicate your home directory on a new machine
+
+> git clone --separate-git-dir=~/.myconf /path/to/repo ~
+
 #
+# Filtering confidential information
+# https://wiki.archlinux.org/index.php/Git#Filtering_confidential_information
+#
+
 # Omit to push sensible info
-#
 
+> Edit: .git/config (here: dotfiles/config)
+	
+	some-dotfile filter=remove-pass
 
+> Edit: .gitattributes or GIT_DIR/info/attributes/ (here: dotfiles/info/attributes)
 
+	[filter "remove-pass"]
+	clean = "sed -e 's/^password=.*/#password=TODO/'"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> Edit: .dotfiles/info/exclude 
+# Add all neccessary files
