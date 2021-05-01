@@ -1,0 +1,109 @@
+devtools::load_all(".")
+library(elisr)
+devtools::load_all("elisr")
+devtools::load_all(".")
+library(elisr)
+devtools::load_all(".")
+library(elisr)
+available::available("elisr")
+devtools::install_deps()
+devtools::run_examples()
+devtools::spell_check()
+devtools::test()
+# Test coverage
+devtools::test_coverage()
+# Use automatic test
+# usethis::use_github_action("test-coverage")
+# usethis::use_github_actions_badge("test-coverage")
+#
+# Removed additional dependency
+covr::codecov(token = "2e76aec3-7ccf-44cb-a0bd-caeab4e07fa7")
+res <- devtools::check()
+goodpractice::gp()
+# lintr on package, README, and the vignette.
+inteRgrate::check_lintr()
+# DESCRIPTION file is tidy. If not... tidy description
+inteRgrate::check_tidy_description()
+usethis::use_tidy_description()
+devtools::document()
+# checks that all file extensions are .R and all names are lower case.
+inteRgrate::check_r_filenames()
+# .gitignore contains standard files.
+inteRgrate::check_gitignore()
+# installs package dependencies, builds, and installs the package, before
+# running package check
+inteRgrate::check_pkg()
+Results
+results
+# installs package dependencies, builds, and installs the package, before
+# running package check
+inteRgrate::check_pkg()
+res <- devtools::check()
+res
+res <- devtools::check()
+res
+# DESCRIPTION file is tidy. If not... tidy description
+inteRgrate::check_tidy_description()
+usethis::use_tidy_description()
+devtools::document()
+# checks that all file extensions are .R and all names are lower case.
+inteRgrate::check_r_filenames()
+# .gitignore contains standard files.
+inteRgrate::check_gitignore()
+# installs package dependencies, builds, and installs the package, before
+# running package check
+inteRgrate::check_pkg()
+results <- rhub::check_for_cran()
+result
+results
+devtools::check_win_devel()
+psych::alpha(msdf$scl_1)
+?alpha
+library("knitr")
+results$cran_summary()
+devtools::document()
+# Update website after you made any changes (Readme.md, usw.)
+pkgdown::build_site()
+# Update website after you made any changes (Readme.md, usw.)
+pkgdown::build_site()
+# Update website after you made any changes (Readme.md, usw.)
+pkgdown::build_site()
+devtools::install_deps()
+devtools::run_examples()
+devtools::install_deps()
+devtools::run_examples()
+devtools::spell_check()
+devtools::test()
+# Test coverage
+devtools::test_coverage()
+# Use automatic test
+# usethis::use_github_action("test-coverage")
+# usethis::use_github_actions_badge("test-coverage")
+#
+# Removed additional dependency
+covr::codecov(token = "2e76aec3-7ccf-44cb-a0bd-caeab4e07fa7")
+res <- devtools::check()
+res
+goodpractice::gp()
+# lintr on package, README, and the vignette.
+inteRgrate::check_lintr()
+# DESCRIPTION file is tidy. If not... tidy description
+inteRgrate::check_tidy_description()
+usethis::use_tidy_description()
+devtools::document()
+# checks that all file extensions are .R and all names are lower case.
+inteRgrate::check_r_filenames()
+# .gitignore contains standard files.
+inteRgrate::check_gitignore()
+# installs package dependencies, builds, and installs the package, before
+# running package check
+inteRgrate::check_pkg()
+results <- rhub::check_for_cran()
+# Update website after you made any changes (Readme.md, usw.)
+pkgdown::build_site()
+# accurate package version -- latest changes on github?
+inteRgrate::check_version()
+# accurate package version -- latest changes on github?
+inteRgrate::check_version()
+results$cran_summary()
+devtools::release()

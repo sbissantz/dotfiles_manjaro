@@ -1,0 +1,57 @@
+################################
+# Rprofile from Steven Bißantz #
+################################
+
+.First <- function() {
+  # Print a welcome message
+  message("Welcome back ", Sys.getenv("USER"),"!\n","working directory is:", getwd())
+}
+
+# Set the CRAN mirror
+#
+local({
+  r = getOption("repos")
+  r["CRAN"] = "https://ftp.fau.de/cran/"
+  options(repos = r)
+})
+
+# warn on partial matches
+#
+options(warnPartialMatchAttr = TRUE,
+        warnPartialMatchDollar = TRUE,
+        warnPartialMatchArgs = TRUE)
+
+# fancy quotes are annoying and lead to
+# 'copy + paste' bugs / frustrations
+#
+options(useFancyQuotes = FALSE)
+
+# 'nvim' as editor of choice | edit()
+#
+options(editor="/usr/bin/nvim")
+
+# Custom prompt
+#
+options(prompt = "R> ", continue = "  ")
+
+# Autocompletions for package names in
+# `require()`, `library()`
+#
+utils::rc.settings(ipck = TRUE)
+
+# warnings are errors
+#
+# options(warn = 2)
+
+# Get some 'nuggets of truth'
+#
+if(interactive())
+  try(fortunes::fortune(), silent = TRUE)
+
+### Make sure the fortunes package is installed
+.Last = function() {
+  cond = suppressWarnings(!require(fortunes, quietly = TRUE))
+  if(cond)
+    try(install.packages("fortunes"), silent = TRUE)
+  #message("Goodbye Steven at ", date(), "\n")
+}
