@@ -1,0 +1,475 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Jun 30 13:21:10 2019
+;; Desktop file format version 208
+;; Emacs version 26.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23832 39718 803946 581000) (desktop . "208") "steven@flying-dutchman" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-ADBO-Source Code Pro-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1") (font-parameter . "Source Code Pro 10") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#cccccc") (background-color . "#2d2d2d") (mouse-color . "black") (border-color . "#515151") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground . "#d8d8d8") (scroll-bar-background . "#d8d8d8") (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . bar) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#f2777a") (sticky) (environment) (modeline . t) (unsplittable) (frameset--id . "CA50-2813-B249-1872") (frameset--mini t . t) (display . ":0") (icon-name) (explicit-name) (frameset--text-pixel-width . 941) (frameset--text-pixel-height . 1061) (height . 62) (width . 117) (left + -1) (top + -1)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 68) (min-pixel-width . 80) (min-pixel-height-ignore . 51) (min-pixel-width-ignore . 32) (min-pixel-height-safe . 17) (min-pixel-width-safe . 16)) leaf (pixel-width . 957) (pixel-height . 1044) (total-width . 120) (total-height . 61) (normal-height . 1.0) (normal-width . 1.0) (buffer "index.org<steven>" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1511) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("desktop" "ensure" "ensurejk" "ensure" "Webster" "Automaticall" "webster" "idle" "ispell" "recentfj" "recentf" "recent" "key" "recentfjj" "key" "bind"))
+(setq regexp-search-ring '("i/" "i" "\\<\n\\>" "indexplot" "\\<\\$s\\>" "i" "index." "\\<\n\\>" "\\<(\\>" "\\<if\\>" "\\<\n\\>" "\\<Let\\>" "\\<\n\\>" "\\<:\\>" "\\<\n\\>" "evil-org"))
+(setq register-alist (list '(117) '(113) '(48 . "s") (desktop-list* 120 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook `(lambda nil (set-marker ,mk ,nil (get-buffer ," *temp*")))) mk))))
+(setq file-name-history '("~/Downloads/dotfiles/emacs.d/configuration.org" "~/dotfiles/emacs.d/init.el" "~/" "~/library/drills/wickham.org" "~/library/drills/logit.org" "~/library/drills/logit" "~/library/drills/" "~/dotfiles/emacs.d/" "~/dotfiles/emacs.d/init.el" "~/systemCrash/systemCrashHelp.org" "~/library/drills/wickham.org" "~/library/drills/logit.org" "~/library/drills/gelman_hill.org" "~/library/drills/g" "~/library/drills/wickham.org" "~/library/drills/logit.org" "~/library/drills/" "~/library/excerpts/gelman_hill.org" "~/library/excerpts/gelman_hill" "~/dotfiles/zshrc" "~/dotfiles/.git/info/exclude" "~/dotfiles/.gitignore" "~/library/drills/gelman_hill.org" "~/library/drills/wickham.org" "~/library/drills/" "~/library/drills/gelman_hill.org" "~/library/drills/" "~/library/excerpts/gelman_hill.org" "~/library/configuration.org" "~/dotfiles/emacs.d/configuration.org" "~/dotfiles/emacs.d/configuration.el" "~/.aliases" "~/library/drills/wickham.org" "~/library/drills/logit.org" "~/library/drills/wickham.org" "~/library/drills/" "~/library/excerpts/gelman_hill.org" "~/library/excerpts/wickham.org" "~/library/pics/statSummary.png" "~/library/excerpts/wickham.org" "~/library/drills/" "~/library/excerpts/" "~/library/excerpts/wickham.org" "~/library/drills/" "~/dotfiles/emacs.d/configuration.org" "~/library/drills/" "~/library/drills/logit.org" "~/library/drills/wickham.org" "~/library/drills/" "~/library/excerpts/" "~/library/drills/" "~/library/excerpts/sem.org" "~/library/excerpts/asap.org" "~/library/excerpts/programmierenR.org" "~/library/excerpts/asap.org" "~/library/excerpts/dataWrangling.org" "~/library/excerpts/wickham.org" "~/dotfiles/symlinks.sh" "~/Downloads/" "~/library/drill.org" "~/.dotfiles/.emacs.d/init.el" "~/library/drill.org" "~/.dotfiles/.emacs.d/init.el" "~/library/excerpts/wickham.org" "~/library/excerpts/" "~/systemCrash/systemCrashHelp.org" "~/library/excerpts/wickham.org" "~/library/pics/statSummary.png" "~/library/pics/" "~/Pictures/" "~/library/excerpts/regdiagno.org" "~/library/excerpts/multilevel.org" "~/library/excerpts/wickham.org" "~/library/excerpts/gelman_hill.org" "~/library/excerpts/wickham.org" "~/library/rProjects/" "~/library/work/" "~/library/excerpts/subset.org" "~/.aliases" "~/Documents/excerpts/learnR.org" "~/Documents/rProjects/" "~/Documents/rProjects/mode/" "~/Documents/rProjects/mode.org" "~/Documents/mode/" "~/Documents/mode/mode.org" "~/Documents/mode/" "~/Documents/rProjects/mode.org" "~/methodenzentrum/spitze-content/2-Studiengaenge/2.1-Computervisualistik/2.1.4-Fachspezifische-Aufgaben/2.1.4.5-Mathematik.md" "~/methodenzentrum/spitze-content/2-Studiengaenge/2.1-Computervisualistik/2.1.4-Fachspezifische-Aufgaben/2.1.4.4-Theoretische-Informatik.md" "~/Documents/excerpts/rHacks.org" "~/Documents/excerpts/gelman_hill.org" "~/.dotfiles/.emacs.d/configuration.el" "~/.dotfiles/.emacs.d/init.el" "~/todo/archive.org" "~/.dotfiles/.emacs.d/configuration.el" "~/Downloads/.dotfiles-master/.emacs.d/configuration.org" "~/.dotfiles/.emacs.d/custom.el" "~/.dotfiles/.emacs.d/init.el" "~/Documents/rProjects/" "~/Documents/todo.org"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/steven/todo/index.org"
+  "index.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode evil-smartparens-mode)
+  1511
+  '(1511 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 39715 991252 307000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (3048 3048 230 230 230 230 230 74 1 230 230 230 230 64 230 230))))
+
+(desktop-create-buffer 208
+  "/home/steven/.emacs.d/elpa/org-20190624/org-loaddefs.el"
+  "org-loaddefs.el"
+  'emacs-lisp-mode
+  '(abbrev-mode visual-line-mode eldoc-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode flycheck-mode rainbow-delimiters-mode)
+  110034
+  '(110034 nil)
+  nil
+  nil
+  '((buffer-display-time 23832 38809 610018 538000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/Downloads/dotfiles/emacs.d/configuration.org"
+  "configuration.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  71
+  '(71 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 36234 669943 579000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (71 53 1 71))))
+
+(desktop-create-buffer 208
+  "/home/steven/dotfiles/emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(abbrev-mode visual-line-mode eldoc-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode flycheck-mode rainbow-delimiters-mode)
+  9
+  '(28 nil)
+  nil
+  nil
+  '((buffer-display-time 23832 34978 524696 632000) (buffer-file-coding-system . prefer-utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (632 28 28 225 28 28 27 226 28 28 28 28 225 28 28 437))))
+
+(desktop-create-buffer 208
+  "/home/steven/.emacs.d/elpa/org-plus-contrib-20190624/org-loaddefs.el"
+  "org-loaddefs.el"
+  'emacs-lisp-mode
+  '(abbrev-mode visual-line-mode eldoc-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode flycheck-mode rainbow-delimiters-mode)
+  138790
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 23832 34149 411576 551000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "steven"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  1280
+  '(1280 nil)
+  t
+  '("/home/steven/")
+  '((buffer-display-time 23832 29564 546263 372000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/library/drills/wickham.org"
+  "wickham.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  12491
+  '(12491 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 28512 159962 779000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (12491 19118 74 85 17414 17415 13573 14293 1 7624 7576 19573 19672 29576 27217 27234))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/drills/logit.org"
+  "logit.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  125
+  '(125 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 28423 334119 653000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (125 374 559 7709 141))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/drills/gelman_hill.org"
+  "gelman_hill.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  9285
+  '(9285 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 28314 699379 688000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (9285 45 34 2058 4197 15324 7284 7283 1371 1362 1413 8602 10133 10132 10107 1412))))
+
+(desktop-create-buffer 208
+  nil
+  "drills"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  130
+  '(130 nil)
+  t
+  '("/home/steven/library/drills/")
+  '((buffer-display-time 23832 27923 482813 124000) (overwrite-mode) (truncate-lines))
+  '((mark-ring (83))))
+
+(desktop-create-buffer 208
+  "/home/steven/todo/archive.org"
+  "archive.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode evil-smartparens-mode)
+  17541
+  '(17541 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 25438 555741 167000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (22121))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/sem.org"
+  "sem.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  26118
+  '(1045 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 21654 864842 123000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1045 1045 1 1045 1045 1045 1045 1045 1045 1045 1045 1045 1045 1045 1045 1045))))
+
+(desktop-create-buffer 208
+  nil
+  "Downloads"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  75
+  '(nil nil)
+  t
+  '("/home/steven/Downloads/")
+  '((buffer-display-time 23832 21611 381953 181000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/systemCrash/systemCrashHelp.org"
+  "systemCrashHelp.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  11745
+  '(22266 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 19838 585123 330000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1682 2641 2603 2543 1874 2126 1543 1693 411 25646 25646 25645 25645 25434 25323 12964))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/gelman_hill.org"
+  "gelman_hill.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  12538
+  '(12538 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23832 4709 641514 216000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (12538 9661 9058 8722 8529 8031 7263 6969 7085 5434 5079 4857 5078 4812 4849 5096))))
+
+(desktop-create-buffer 208
+  nil
+  "ARM_Data"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  258
+  '(nil nil)
+  t
+  '("/home/steven/library/excerpts/gelman_hill/ARM_Data/")
+  '((buffer-display-time 23831 65522 788130 738000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "gelman_hill"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  248
+  '(nil nil)
+  t
+  '("/home/steven/library/excerpts/gelman_hill/")
+  '((buffer-display-time 23831 65508 918312 562000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/dotfiles/zshrc"
+  "zshrc"
+  'fundamental-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode)
+  3676
+  '(3676 nil)
+  nil
+  nil
+  '((buffer-display-time 23831 65505 808280 636000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/dotfiles/.git/info/exclude"
+  "exclude"
+  'fundamental-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode)
+  487
+  '(475 nil)
+  nil
+  nil
+  '((buffer-display-time 23831 60009 651004 920000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (287 305 343 370 387 406 305 434 305 435 469 275 480 487))))
+
+(desktop-create-buffer 208
+  nil
+  "bamberg_uni"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  750
+  '(750 nil)
+  t
+  '("/home/steven/Documents/bamberg_uni/")
+  '((buffer-display-time 23831 48068 418757 628000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "work"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  78
+  '(78 nil)
+  t
+  '("/home/steven/library/work/")
+  '((buffer-display-time 23831 47771 417293 72000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/library/configuration.org"
+  "configuration.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  3997
+  '(4106 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 47657 386845 260000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (19990 2267 9286 23064))))
+
+(desktop-create-buffer 208
+  "/home/steven/dotfiles/emacs.d/configuration.el"
+  "configuration.el"
+  'emacs-lisp-mode
+  '(abbrev-mode visual-line-mode eldoc-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode flycheck-mode rainbow-delimiters-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 23831 47173 443010 988000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/dotfiles/aliases"
+  "aliases"
+  'fundamental-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode)
+  339
+  '(340 nil)
+  nil
+  nil
+  '((buffer-display-time 23831 47166 85892 767000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (770 659 627 582 616 731 784))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/todo/index.org"
+  "index.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  1033
+  '(924 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 30404 9230 100000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (924))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/regdiagno.org"
+  "regdiagno.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  61431
+  '(61431 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 29672 923679 236000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/multilevel.org"
+  "multilevel.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  63025
+  '(63025 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 29634 941713 855000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (63025))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/wickham.org"
+  "wickham.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  8850
+  '(8850 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 27945 607546 115000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (8850 7532 6632 6065 7263 7264 6705 7956 7304 2761 7078 1121 601 602 3998 8708))))
+
+(desktop-create-buffer 208
+  "/home/steven/dotfiles/emacs.d/recentf"
+  "recentf"
+  'fundamental-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode)
+  467
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 23831 23711 773658 678000) (buffer-file-coding-system . utf-8-emacs-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1))))
+
+(desktop-create-buffer 208
+  nil
+  "excerpts"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  2152
+  '(2523 nil)
+  t
+  '("/home/steven/library/excerpts/")
+  '((buffer-display-time 23831 23689 202210 849000) (overwrite-mode) (truncate-lines))
+  '((mark-ring (2511))))
+
+(desktop-create-buffer 208
+  nil
+  "references"
+  'dired-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode TeX-PDF-mode company-mode)
+  443
+  '(443 nil)
+  t
+  '("/home/steven/Documents/references/")
+  '((buffer-display-time 23831 21355 916729 475000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/asap.org"
+  "asap.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  12392
+  '(12392 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 9725 523912 280000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (12392 12062 33092 34975 31414 31314 31214 31114 31013 31614 20297 1 2414 21591 10685 12070))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/subset.org"
+  "subset.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  1251
+  '(1997 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 6938 335757 193000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1997 1 4394))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/programmierenR.org"
+  "programmierenR.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  248
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 6564 675341 567000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/library/excerpts/dataWrangling.org"
+  "dataWrangling.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode eldoc-mode org-cdlatex-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode flyspell-mode undo-tree-mode evil-org-mode TeX-PDF-mode company-mode flycheck-mode org-indent-mode rainbow-delimiters-mode)
+  8667
+  '(8667 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 23831 6508 302028 838000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (8536 7015 8969))))
+
+(desktop-create-buffer 208
+  "/home/steven/library/pics/statSummary.png"
+  "statSummary.png"
+  'image-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 23831 665 556090 525000) (buffer-file-coding-system . no-conversion) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/steven/dotfiles/symlinks.sh"
+  "symlinks.sh"
+  'sh-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode smartparens-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode flycheck-mode rainbow-delimiters-mode)
+  610
+  '(610 nil)
+  nil
+  nil
+  '((buffer-display-time 23832 39687 746536 878000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (610))))
+
+(desktop-create-buffer 208
+  nil
+  "*info*"
+  'Info-mode
+  '(abbrev-mode visual-line-mode auto-compile-on-load-mode global-auto-revert-mode subword-mode override-global-mode undo-tree-mode TeX-PDF-mode company-mode)
+  43315
+  '(43315 nil)
+  t
+  '("/usr/share/info/mu4e" "Message view" nil)
+  '((tab-width . 8) (buffer-display-time 23832 39593 675973 332000) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t) (truncate-lines))
+  '((mark-ring (43315))))
+
