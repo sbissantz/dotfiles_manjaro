@@ -1,0 +1,14 @@
+#
+#
+# yay 
+# Access to Arch User Repo
+#
+#
+
+# Clone the Repo
+#
+> cd ~ && git clone https://aur.archlinux.org/yay.git
+
+# 'Make' it
+#
+> cd yay && makepkg -si

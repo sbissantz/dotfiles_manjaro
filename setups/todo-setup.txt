@@ -1,0 +1,12 @@
+#
+#
+# Todo
+#
+#
+
+> dunst
+> intel-advisor
+> Nextcloud
+> pam email certificate
+> VPN
+> Samba

@@ -285,26 +285,63 @@ xrandr --output eDP-1 --brightness 0.7
     # Decrease brightness
     bindsym XF86MonBrighnessDown exec “xbacklight -dec 5”
 
+
+#
+# Touchpad toggle
+# https://era86.github.io/2019/01/17/thinkpad-function-key-mapping-toggle-touchpad-ubuntu-1804.html
+
+> systemctl status acpi.service
+
+# If necessary...
+> systemctl enable acpi.service
+> systemctl start acpi.service
+
+# Find out about key, e.g.
+> acpi_listen (& press wanted key -> ibm/hotkey LEN0268:00 00000080 00001315)
+
+> Edit|create: /etc/acpi/events/ibm-touchpad
+
+	event=ibm/hotkey LEN0268:00 00000080 00001315
+	action=/etc/acpi/ibm-touchpad.sh~
+
+> Get $XAUTHORITY
+
+echo $XAUTHORITY
+
+> Create: /etc/acpi/ibm-touchpad.sh 
+
+	# XAUTHORITY value from 'echo $XAUTHORITY'
+	export XAUTHORITY="/home/steven/.Xauthority"
+	export DISPLAY=":`ls -1 /tmp/.X11-unix/ | sed -e s/^X//g | head -n 1`"
+	# 'Synaptics' is the name of the touchpad manufacterer for ThinkPads (as of         
+	# writing)
+	read TPdevice <<EOF
+	< $( xinput | sed -nre '/Synaptics/s/.*id=([0-9]*).*/\1/p' )
+	state=$( xinput list-props "$TPdevice" | grep "Device Enabled" | grep -o "[01]$" )
+
+	# Check the state of the device and enable/disable accordingly
+	if [ "$state" -eq '1' ];then
+  	xinput --disable "$TPdevice"
+	else
+  	xinput --enable "$TPdevice"
+	fi
+
+# Make script writeable
+> sudo chmod 777 /etc/acpi/events/ibm-touchpad
+> sudo chmod 777 /etc/acpi/ibm-touchpad.sh
+
+# Test script
+. /etc/acpi/ibm-touchpad.sh
+
+# Reboot!
+
 # 
 # Git
 #
 
 > git
 
-
 #
-# Bash
-#
-
-# Bash logout
-# To get rid of the ugly looking glyps when shutting down
-#
-
-> ~/.bash_logout
-
-	clear
-	reset
-
 # Oh my bash
 #
 
@@ -441,3 +478,59 @@ Note: To change the background image, edit the file ~/.fehbg
 
 > Edit: .dotfiles/info/exclude 
 # Add all neccessary files
+
+#
+# Fonts
+#
+
+# Firacode
+#
+pacman -S ttf-fira-code
+
+# Font awesome
+# Choose the 100% free version
+# https://fontawesome.com/v4.7.0/cheatsheet/
+#
+yay -i fontawesome 
+
+mkdir .fonts
+cd /Downloads
+cp ./*.ttf ~/.fonts
+rm -rf ~/Downloads/fontawesome
+
+#
+# Arc-Gtk theme
+# 
+
+pacman -S arc-gtk-theme
+
+#
+# .aliases
+#
+
+> Edit: ~/.bashrc
+
+	if [ -f ~/.aliases ]; then
+      		. ~/.aliases
+  	fi
+> Create ~/.aliases
+> source ~/.aliases
+
+#
+# Nextcloud client
+#
+
+> yay -Q nextcloud-client                                           
+
+#
+# Samba
+#
+ 
+# Connect to the Landau uni-server use the folwing command
+ 
+> sudo mount -t cifs //sambaserver.uni-landau.de/home/biss9236 /mnt -o user=biss9236
+
+
+
+
+

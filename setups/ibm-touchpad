@@ -1,0 +1,2 @@
+event=ibm/hotkey LEN0268:00 00000080 00001315
+action=/etc/acpi/ibm-touchpad.sh

@@ -1,0 +1,8 @@
+[Unit]
+Description=symlinks.service
+
+[Service]
+ExecStart=/home/steven/.dotfiles/symlinks.sh start
+
+[Install]
+WantedBy=multi-user.target

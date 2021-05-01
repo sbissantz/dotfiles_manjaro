@@ -10,6 +10,12 @@
 # TODO: http://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/
 
 #
+# Rank mirrors
+#
+
+sudo pacman-mirrors --fasttrack 5 
+
+#
 # Package manager: enable parallel compiling (to speed up)
 # 
 
@@ -48,12 +54,20 @@ pacman -S ccache
 	F77=$(CCACHE) gfortran$(VER)
 
 #
-# Openblas/LAPACK (libopenblas)
+# Openblas/LAPACK - Multicoresupport (libopenblas)
 # Note: I installed openblas before R & R-devel since blas and lapack seem to
 # conflict with openblas-lapack
 #
 
 yay -S openblas-lapack
+
+export JAVA_LIBS="$JAVA_LIBS -ldl"
+sudo R CMD javareconf
+
+# Further performace increase 
+#
+
+yay -S intel-advisor
 
 #
 # R
@@ -127,10 +141,18 @@ create_from_github(repo = "pat-s/oddsratio", destdir = "~/git", credentials = gi
 
 	R_LIBS_USER = ${HOME}/Rlibs/%v
 
+# IMPORTANT NOTE: Both .Renviron and .Rprofile must end with a newline character.
+# If they do not the last line with be ignored without a warning or error. 
+# VIM handles that: https://yihui.org/en/2018/04/rprofile-trailing-newline/
+
 #
 # .Rprofile (READ ON above)
 # http://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/
 #
+
+# IMPORTANT NOTE: Both .Renviron and .Rprofile must end with a newline character.
+# If they do not the last line with be ignored without a warning or error. 
+# VIM handles that: https://yihui.org/en/2018/04/rprofile-trailing-newline/
 
 #
 # radian 
@@ -143,6 +165,11 @@ yay -S radian
 #
 
 yay -S rstudio-desktop
+
+# IMPORTANT NOTE: Both .Renviron and .Rprofile must end with a newline character.
+# If they do not the last line with be ignored without a warning or error. 
+# Check Rstudio: Options > Code > Saving > Ensure that files end with a newline
+# character!
 
 #
 # Rstudio (with R devel)
