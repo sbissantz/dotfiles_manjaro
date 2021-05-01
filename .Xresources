@@ -1,0 +1,98 @@
+!
+! Raven Dark Theme
+!
+
+#define t_bg_floor     #010000
+#define t_bg_dip       #191815
+#define t_background   #1f1e1b
+#define t_bg_bump      #2B2A27
+#define t_fg_comment   #68696C
+#define t_foreground   #FAF5EF
+!#define t_foreground   #8E8F93
+!#define t_foreground   #FDF6E4
+#define t_fg_highlight #9D9EA2
+#define t_fg_ceiling   #FEFFFF
+
+URxvt.background: t_background
+URxvt.foreground: t_foreground
+
+URxvt.colorBD: t_fg_highlight
+URxvt.colorIT: t_fg_highlight
+URxvt.colorUL: t_fg_highlight
+
+URxvt.cursorColor: #B47CAD
+
+! BLK
+URxvt.color0: t_bg_bump
+URxvt.color8: t_fg_comment
+
+! WHT
+URxvt.color7: t_fg_highlight
+URxvt.color15: t_fg_ceiling
+
+! RED
+URxvt.color1: #99554F
+URxvt.color9: #D58A83
+
+! YEL
+URxvt.color3: #756830
+URxvt.color11: #AE9D62
+
+! GRN
+! URxvt.color2: #38754B
+URxvt.color2: #71BC78
+URxvt.color10: #6EAC7E
+
+! CYN
+URxvt.color6: #007683
+URxvt.color14: #42AEBA
+
+! BLU
+URxvt.color4: #496AA0
+URxvt.color12: #81A0D9
+
+! MAG
+URxvt.color5: #8C5786
+URxvt.color13: #C58CBE
+
+URxvt.color16: t_bg_floor
+URxvt.color17: t_bg_dip
+URxvt.color18: t_background
+URxvt.color19: t_bg_bump
+URxvt.color20: t_fg_comment
+URxvt.color21: t_foreground
+URxvt.color22: t_fg_highlight
+URxvt.color23: t_fg_ceiling
+
+!!!!!!!!!!
+
+XTerm*selectToClipboard: true
+
+Xcursor.size:                     0
+
+URxvt.font: xft:Fira Code Retina:style=Light:pixelsize=10
+! URxvt.font: xft:Fira Code Retina:style=Retina:pixelsize=10
+
+URxvt.depth:                      32
+URxvt.scrollBar:                  false
+URxvt.mouseWheelScrollPage:       false
+URxvt.cursorBlink:                false
+URxvt.saveLines:                  5000
+
+! Normal copy-paste keybindings without perls
+URxvt.iso14755:                   false
+URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
+
+!Xterm escape codes, word by word movement
+URxvt.keysym.Control-Left:        \033[1;5D
+URxvt.keysym.Shift-Control-Left:  \033[1;6D
+URxvt.keysym.Control-Right:       \033[1;5C
+URxvt.keysym.Shift-Control-Right: \033[1;6C
+URxvt.keysym.Control-Up:          \033[1;5A
+URxvt.keysym.Shift-Control-Up:    \033[1;6A
+URxvt.keysym.Control-Down:        \033[1;5B
+URxvt.keysym.Shift-Control-Down:  \033[1;6B
+
+
+
