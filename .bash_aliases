@@ -3,10 +3,12 @@
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
+alias cp='cp -i'
 
 # (Colored) ls
 #
-alias ls='ls -F --color=auto'
+alias l='ls -F --color=auto'
+alias ls='ls -F'
 alias ll='ls -lhF --color=auto'
 alias la='ls -alhF --color=auto'
 
