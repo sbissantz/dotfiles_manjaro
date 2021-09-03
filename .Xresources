@@ -70,7 +70,7 @@ XTerm*selectToClipboard: true
 
 Xcursor.size:                     0
 
-URxvt.font: xft:Fira Code Retina:style=Light:pixelsize=11
+URxvt.font: xft:Fira Code Retina:style=Light:pixelsize=12
 ! URxvt.font: xft:Fira Code Retina:style=Retina:pixelsize=10
 
 URxvt.depth:                      32

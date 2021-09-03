@@ -26,7 +26,7 @@ export INFOPATH=$INFOPATH:/opt/texlive/2021/texmf-dist/doc/info
 # R
 #
 export R_ENVIRON_USER=$HOME/.R/Renviron
-export RSTUDIO_WHICH_R=/usr/bin/R-devel
+# export RSTUDIO_WHICH_R=/usr/bin/R-devel
 
 # Additional
 #
